@@ -38,6 +38,4 @@ function clickMe(e) {
 //    e.target.innerHTML = "Hi from " + e.target.id + "ofTheDiv";
 //    this.innerHTML = "Hi from " + e.target.id + "ofTheDiv";
     document.querySelector("#pTag").innerHTML = e.target.id;
-
-
 }
