@@ -46,7 +46,7 @@ function removeLast(e) {
 
 
 /**
- * tirsdags opgave genbrug
+ * onsdags opgave genbrug
  */
 var longNames = names.filter(name => name.length >= 3);
 

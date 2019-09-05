@@ -5,14 +5,22 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        
-        
-        
-        
-        
 
+        <!--Tabel der bliver fyldt ud af JS - class="table" er bootstrap -->
+        <div class="container">
+            <table id="carTable" class="table">
+            </table>
+        </div>
+        <form>
+            Price:
+            <input id="priceValue" type="text" name="priceValue">
+            <button id="prisFilter">Price less than</button>
+        </form> 
         <!-- henter javascript del -->
         <script src="UsingMapAndFilter.js"></script>
     </body>
