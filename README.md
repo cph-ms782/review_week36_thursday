@@ -3,4 +3,7 @@
 ## Dom Manipulation and Events  
 
 ### Simple DOM manipulation and Event handling  
-[LINK]()
+[LINK]()  
+### Event Bubbling and event arguments  
+[LINK]()  
+
