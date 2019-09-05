@@ -43,8 +43,6 @@ function removeLast(e) {
     document.querySelector("#list").innerHTML = HTMLication(names);
 }
 
-
-
 /**
  * onsdags opgave genbrug
  */
