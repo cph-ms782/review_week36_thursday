@@ -2,11 +2,15 @@
  * Dynamic UI manipulation using data obtained via fetch
  */
 
-
-
+/**
+ * To event listeners til de to knapper
+ */
 document.querySelector("#getUser").onclick = getUser;
 document.querySelector("#getAllUsers").onclick = getAllUsers;
-console.log("Logger");
+
+/**
+ * Udskriver enkelt bruger.
+ */
 function getUser(e) {
     e.preventDefault();
     var ID = document.querySelector("#userID").value;
@@ -18,9 +22,8 @@ function getUser(e) {
                 // Inside this callback, and only here, the response data is available
 //                console.log("data", data);
                 var tags = [];
-                document.querySelector("#users").innerHTML = data.comp
+                document.querySelector("#users").innerHTML = data.comp;
                 Object.keys(data).forEach(function (key) {
-                    if(typeof key === Object)
                     console.log(key + " : " + data[key]);
                     tags.push(key + " : " + data[key]);
                 });
@@ -28,6 +31,9 @@ function getUser(e) {
             });
 }
 
+/**
+ * Laver tabel over alle brugere
+ */
 function getAllUsers(e) {
     e.preventDefault();
     let url = "https://jsonplaceholder.typicode.com/users";
@@ -37,11 +43,31 @@ function getAllUsers(e) {
             .then(data => {
                 // Inside this callback, and only here, the response data is available
                 console.log("data", data);
-                /* data now contains the response, converted to JavaScript
-                 Observe the output from the log-output above
-                 Now, just build your DOM changes using the data*/
-            })
+                var table = [];
+                var name;
+                var phone;
+                table.push("<thead><tr><th>Name:</th><th>Phone:</th></th></tr></thead>");
+                document.querySelector("#users").innerHTML = data.comp;
+                data.forEach(function (k) {
+                    Object.keys(k).forEach(function (key) {
+                        if (key === 'name') {
+                            name = k[key];
+                            console.log("name: " + name);
+                        }
+                        if (key === 'phone') {
+                            phone = k[key];
+                            console.log("phone: " + phone);
+                        }
+                    });
+                    table.push("<tbody><tr><td>" + name + "</td><td>" + phone 
+                            + "</td></tr></tbody>");
+                });
+                document.querySelector("#users").innerHTML =
+                        "<table id=\"carTable\" class=\"table\">"
+                        + table.join("") + "</table>";
+            });
 }
+
 
 
 
