@@ -18,9 +18,11 @@ function getUser(e) {
                 // Inside this callback, and only here, the response data is available
 //                console.log("data", data);
                 var tags = [];
+                document.querySelector("#users").innerHTML = data.comp
                 Object.keys(data).forEach(function (key) {
-                    console.log(key + ":" + data[key]);
-                    tags.push(key + ":" + data[key]);
+                    if(typeof key === Object)
+                    console.log(key + " : " + data[key]);
+                    tags.push(key + " : " + data[key]);
                 });
                 document.querySelector("#users").innerHTML = tags.join("<br />");
             });
